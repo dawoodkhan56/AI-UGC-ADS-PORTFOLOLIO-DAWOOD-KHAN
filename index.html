@@ -1,0 +1,190 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Dawood Khan Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;0,800;1,500&display=swap">
+<style>
+/* Layout: single-page portfolio. Home (text + arch photo) > About (dark green) > Work (folder cards + sample reel) > Contact. */
+:root{
+  --lav:#ece8f1; --paper:#f7f5fa; --green:#1b3a32; --green2:#244a40; --wine:#8a3f5a; --gold:#d9a441; --ink:#1d2421; --mute:#5b5f66;
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif; --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--lav);color:var(--ink);font:16px/1.6 var(--sans);margin:0}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--serif);margin:0;text-wrap:balance;line-height:1.05}
+nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px;position:relative;z-index:3}
+nav .brand{font-family:var(--serif);font-weight:700;font-size:1.05rem;color:var(--green)}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:.9rem}
+nav ul a{padding:6px 0;color:var(--mute);border-bottom:2px solid transparent}
+nav ul a:hover{color:var(--green);border-color:var(--wine)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;padding:15px 30px;font-weight:700;font-size:.95rem;border:2px solid var(--green);transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.solid{background:var(--green);color:#fff}
+.btn.line{color:var(--green);background:transparent}
+.btn.wa{background:#1f8f4e;border-color:#1f8f4e;color:#fff}
+
+/* HOME */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-block:10px 80px}
+.hero .eyebrow{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.hero h1{font-size:clamp(3.2rem,8.5vw,6.4rem);color:var(--green);font-weight:800;margin:18px 0 10px;letter-spacing:-.02em}
+.hero .role{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(1.5rem,3vw,2.1rem);color:var(--wine)}
+.hero p{max-width:34em;color:#3d4348;margin:22px 0 30px;font-size:1.05rem}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.arch{margin:0;aspect-ratio:4/5;border-radius:999px 999px 24px 24px;overflow:hidden;background:var(--green);box-shadow:0 30px 60px -30px rgba(27,58,50,.55);max-width:100%}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block}
+
+/* ABOUT */
+.about{background:var(--green);color:#eef2ef;padding-block:90px}
+.about .grid{display:grid;grid-template-columns:320px 1fr;gap:64px;align-items:start}
+.portrait{text-align:center}
+.portrait .ring{width:290px;height:290px;max-width:100%;border-radius:50%;border:3px solid var(--gold);padding:10px;margin:0 auto 22px}
+.portrait img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 14%;display:block}
+.portrait b{font-family:var(--serif);font-size:1.5rem;display:block;color:#fff}
+.portrait span{font-size:.9rem;color:#b9c8c1}
+.about h2{font-size:clamp(2.4rem,5vw,3.6rem);color:#fff;margin-bottom:20px}
+.about p{color:#d3ded9;max-width:42em;margin:0 0 14px}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.tile{background:var(--green2);border-radius:14px;padding:20px}
+.tile::before{content:"";display:block;width:26px;height:3px;background:var(--gold);margin-bottom:14px}
+.tile h3{font-family:var(--sans);font-size:.98rem;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.3}
+.tile p{font-size:.86rem;line-height:1.55;margin:0;color:#b9c8c1}
+
+/* WORK */
+.work{padding-block:90px 70px}
+.work h2{font-size:clamp(2.4rem,5vw,3.6rem);color:var(--green)}
+.work .sub{color:var(--mute);margin:10px 0 40px;max-width:42em}
+.sections{display:flex;flex-direction:column;gap:26px}
+.cat{background:var(--c);border-radius:22px;padding:30px;display:grid;grid-template-columns:300px minmax(0,1fr);gap:30px;align-items:start}
+.cat .info{display:flex;flex-direction:column;gap:12px}
+.cat .tag{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--wine);font-weight:700}
+.cat h3{font-size:1.7rem;color:var(--green)}
+.cat p{margin:0;color:#454b50;font-size:.95rem}
+.cat .count{font-size:.85rem;color:var(--mute)}
+.cat .open{align-self:flex-start;margin-top:6px;padding:12px 22px;font-size:.9rem}
+.vids{display:flex;gap:16px;overflow-x:auto;padding-bottom:8px;min-width:0}
+.vid{flex:0 0 auto;margin:0}
+.vid video{display:block;height:400px;aspect-ratio:var(--ar);max-width:100%;border-radius:14px;background:#111;object-fit:contain}
+.vid.wide video{height:auto;width:min(560px,calc(100vw - 90px))}
+.vid figcaption{font-size:.82rem;font-weight:500;margin-top:8px;color:var(--ink)}
+
+/* CONTACT */
+.contact{background:var(--paper);padding-block:100px;text-align:center}
+.contact h2{font-size:clamp(2.4rem,6vw,4.2rem);color:var(--green)}
+.contact p{color:var(--mute);margin:14px auto 30px;max-width:30em}
+.contact .stack{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.contact .num{margin-top:26px;font-size:.95rem;color:var(--mute)}
+.contact .num b{color:var(--green);font-size:1.15rem;user-select:all;letter-spacing:.02em}
+footer{background:var(--green);color:#b9c8c1;font-size:.85rem;padding-block:22px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;gap:36px;padding-bottom:60px}
+  .arch{max-width:420px;margin:0 auto;width:100%}
+  .about .grid{grid-template-columns:1fr;gap:40px}
+  .tiles{grid-template-columns:1fr}
+  .cat{grid-template-columns:1fr;gap:20px}
+}
+@media(max-width:600px){
+  nav ul{gap:16px;font-size:.82rem}
+  nav .brand{display:none}
+  nav{justify-content:center}
+  .btn{padding:14px 24px}
+  .about,.work{padding-block:64px 40px}
+  .cat{padding:20px}
+  .vid video{height:340px}
+  .contact{padding-block:70px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+
+<div id="home" style="background:var(--lav)">
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="brand" href="#home">Dawood Khan</a>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <header class="hero">
+      <div>
+        <div class="eyebrow">Portfolio 2026</div>
+        <h1>Dawood<br>Khan</h1>
+        <div class="role">AI UGC Creator</div>
+        <p>Scroll-stopping short videos for beauty, fashion, fitness and product brands, made with AI and edited to feel like real creator content.</p>
+        <div class="cta">
+          <a class="btn solid" href="#work">See my work</a>
+          <a class="btn line" href="#contact">Say hello</a>
+        </div>
+      </div>
+      <figure class="arch"><img src="media/dawood.jpg" alt="Dawood Khan, AI UGC creator" width="900" height="1200"></figure>
+    </header>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="wrap grid">
+    <div class="portrait">
+      <div class="ring"><img src="media/dawood.jpg" alt="Portrait of Dawood Khan" loading="lazy"></div>
+      <b>Dawood Khan</b>
+      <span>AI UGC Creator</span>
+    </div>
+    <div>
+      <h2>About me</h2>
+      <p>Hi, I'm Dawood. I make AI-powered UGC ads that look and feel like a real creator holding your product, for brands that want videos people actually watch without the cost and logistics of a studio shoot.</p>
+      <p>My folders cover skincare serums and Vaseline-style product demos, ladies' dress showcases, fitness and supplement ads, sweater and try-on lifestyle reels, and cinematic hero shots for luxury items like watches. I handle the idea, the creator, the voice, the visuals and the final edit, and deliver vertical files ready for TikTok, Reels and YouTube Shorts.</p>
+      <div class="tiles">
+        <div class="tile"><h3>Made for social</h3><p>Vertical, hook-first videos built for TikTok, Reels and Shorts.</p></div>
+        <div class="tile"><h3>Looks like a real creator</h3><p>Natural pacing, real expressions and talking-to-camera delivery, not stock ad polish.</p></div>
+        <div class="tile"><h3>Idea to final edit</h3><p>Script, visuals, voice, captions and cut handled in one place.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <h2>Selected work</h2>
+    <p class="sub">Every section is one type of video I make. Press play on any video and turn your volume up. Use Open folder to see the full Google Drive folder for that category.</p>
+    <div class="sections" id="sections"></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let's make your next ad.</h2>
+    <p>Tell me about your product and the kind of video you have in mind. I reply on WhatsApp.</p>
+    <div class="stack">
+      <a class="btn wa" href="https://wa.me/923183772475?text=Hi%20Dawood%2C%20I%20saw%20your%20AI%20UGC%20portfolio.%20I%20want%20an%20ad%20for%20my%20product." target="_blank" rel="noopener">Chat on WhatsApp</a>
+      <a class="btn line" href="#work">Browse all video folders</a>
+    </div>
+    <div class="num">WhatsApp: <b>0318 3772475</b></div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>Dawood Khan | AI UGC Creator</span><span>Reels, TikTok and Shorts ads</span></div></footer>
+
+<script>
+var V={"serum-blue":["Serum ad, blue shirt",9/16],"serum-red":["Serum ad, red kurta",9/16],"dress-green":["Green embroidered suit",9/16],"dress-brown":["Festive printed suit",9/16],"dress-teal":["Teal embroidery detail",9/16],"fitness-protein":["Protein ad",16/9],"sweater":["Sweater lifestyle ad",9/16],"tryon-app":["Try-on app ad",9/16],"fashion-text":["Embroidered tee reel",9/16],"watch":["Luxury watch commercial",9/16],"vaseline":["Vaseline product demo",9/16],"facewash":["Face wash ad",16/9]};
+/* Edit titles, links and videos here. Each section opens its own Google Drive folder. */
+var FOLDERS=[
+ {t:"Beauty & Skincare UGC",d:"Serum and skincare ads in a real creator's voice, holding the bottle and talking to camera.",c:"#dfe8e2",v:["serum-blue","serum-red"],u:"https://lnkd.in/dcpYQ_AQ"},
+ {t:"Ladies Dress Showcase",d:"Boutique-style showcase videos for embroidered suits, shawls and festive wear.",c:"#eddde2",v:["dress-green","dress-brown","dress-teal"],u:"https://lnkd.in/dupjMX5h"},
+ {t:"Fitness & Supplement Ads",d:"Energetic gym and studio videos for protein, wellness and sports products.",c:"#e4dfee",v:["fitness-protein"],u:"https://lnkd.in/diETUY9A"},
+ {t:"Fashion Try-On & Lifestyle",d:"Outfit, sweater and app try-on reels shot like a street-style vlog.",c:"#f1e8d2",v:["sweater","tryon-app","fashion-text"],u:"https://lnkd.in/d7dD_Raj"},
+ {t:"Cinematic Product Commercial",d:"Polished, film-style hero shots for premium products such as watches.",c:"#e4dfee",v:["watch"],u:"https://lnkd.in/dHjrdfwi"},
+ {t:"Product Demo UGC",d:"Hands-on demos for everyday products like face wash and petroleum jelly.",c:"#dfe8e2",v:["vaseline","facewash"],u:"https://lnkd.in/dFW4C6pA"}
+];
+document.getElementById("sections").innerHTML=FOLDERS.map(function(f,i){
+ var vids=f.v.map(function(k){var m=V[k];return '<figure class="vid'+(m[1]>1?' wide':'')+'" style="--ar:'+m[1]+'"><video controls playsinline preload="none" poster="media/'+k+'.jpg" src="full/'+k+'.mp4"></video><figcaption>'+m[0]+'</figcaption></figure>';}).join("");
+ return '<article class="cat" style="--c:'+f.c+'"><div class="info"><span class="tag">Folder '+(i+1)+'</span><h3>'+f.t+'</h3><p>'+f.d+'</p><span class="count">'+f.v.length+(f.v.length>1?' sample videos':' sample video')+' below</span><a class="btn solid open" href="'+f.u+'" target="_blank" rel="noopener">Open folder &rarr;</a></div><div class="vids">'+vids+'</div></article>';}).join("");
+document.addEventListener("play",function(e){document.querySelectorAll("video").forEach(function(v){if(v!==e.target)v.pause();});},true);
+</script>
+
+</body></html>
